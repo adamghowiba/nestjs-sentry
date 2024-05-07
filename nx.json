@@ -38,5 +38,17 @@
       "exclude": ["apps/rest-demo-e2e/**/*"]
     }
   ],
-  "nxCloudAccessToken": "YjMwMzliZGQtYWUzNi00ZmFmLTlkMTUtZTVmMTAzZjljOTk5fHJlYWQtd3JpdGU="
+  "nxCloudAccessToken": "YjMwMzliZGQtYWUzNi00ZmFmLTlkMTUtZTVmMTAzZjljOTk5fHJlYWQtd3JpdGU=",
+  "targetDefaults": {
+    "@nx/js:tsc": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
+    }
+  },
+  "release": {
+    "version": {
+      "preVersionCommand": "npx nx run-many -t build"
+    }
+  }
 }
