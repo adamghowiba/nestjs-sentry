@@ -1,0 +1,17 @@
+export default {
+  "plugins": [
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        "preset": "angular",
+        "releaseRules": [
+          { "type": "docs", "release": "patch" },
+          { "type": "refactor", "release": "patch" },
+          { "type": "style", "release": "patch" },
+          { "type": "chore", "release": "patch" }
+        ],
+      }
+    ],
+    "@semantic-release/release-notes-generator"
+  ]
+}
